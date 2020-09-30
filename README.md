@@ -1,6 +1,6 @@
-# 【练手项目】Node.js + Vue.js 全栈开发王者荣耀手机端官网和管理后台
-> 摘自 [Bilibili 全栈之巅](https://space.bilibili.com/341919508)
-
+# 【全栈之巅】Node.js + Vue.js 全栈开发王者荣耀手机端官网和管理后台
+> 摘自 [Bilibili 全栈之巅](https://space.bilibili.com/341919508) 视频教程
+> 原作者 [github 链接](https://github.com/wxs77577/node-vue-moba)
 
 
 ## 一、 入门
