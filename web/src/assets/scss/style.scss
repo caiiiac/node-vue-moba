@@ -46,7 +46,7 @@ a {
 // text
 @each $var in (left, center, right) {
     .text-#{$var} {
-        text-align: $var;
+        text-align: $var !important;
     }
 }
 
