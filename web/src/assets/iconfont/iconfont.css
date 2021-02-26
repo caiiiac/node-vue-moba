@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1614322721637'); /* IE9 */
+  src: url('iconfont.eot?t=1614322721637#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPkAAsAAAAACBAAAAOWAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDcIM9ATYCJAMMCwgABCAFhG0HPhsLB8geiXEsykIR2tVbEQ/8H/7uG3/Nhs2F0/bxMSmMSmAuziSxKI3ytP97z+9mJymSZ0xX8NeTi4nKk87C6VvK/1CxkPq5pwkQEP0/l9Obz8/C+S0LJMU5th4GGAcU6FiDellCBYgtw2sX00EeJqBqUHvM1sjxJWCS4VEB4UyRrGDKWOQGKijrixULs/AOnHJ8aHILwFvw+/ALXTMRFRJ81PbpCAcM/kFf65Ee06EmBUCfzgVlGQnzQCacVHqOoSgzD6laGra5vCgL4lTxWIxAYuuKG/3jRUIR1tSBnM5GfhDjEfitt4iAp+FFVPAB4BuRveGCXBdft2TMNk0LvisJvS+NfCwPf5gcDpdFIuWhUGkwWB23aI2+Nj1+/frAuqqEEuKfBEuC06rW8WorwFd4UbCECUifS6vYsPXoRWFxZjCYt+FoCytXxsTbz/b9x3O2hcvWCosvH98+WT+w6FBuuYLKmQQH0bY593SkfE4h3aTLxuzqNYsOMczBRoymPGSzsliufCAzHnIPOBEoH8KU+G47LqBolL3AXoz+uyALYVt0EV2IRlv1Pso/T3u24uiKZ2nPzblHedDweZN5acqT/oyHyTDomzvP9jZzt8ZQNX3sTqNCvyhknMeZV8o2HenaNzeTDwjDcpXGERltZhyE7YVYx1wJ8cVtMkY05irCsACfOXefqzdmk1rktbcMPPRyorK9cA2sgYlK4ayhssmyD9T65h/Hh6WTN/44FrcF1JF9Jnlo77Zb81oknRl4yAINAP9r0R80NfY/prMoXfzX0/ydJ0X1if2jJiGD77qrlkDRzQfKd+0N/EVThgbkv8KWY2vKplqjxM0nJ7h3ZFa1/f4BB7peDNf2TS7xfGV9CUQlA5CUjaOZnIeCmgUoKluFqjmjltf00CAhVzBrLoKg7ThETZ+QtN1GM/kcCvp9h6J2CKoOQ+qGNZMp/DCNWClxYNsUrNi9HpHaKR/WFxFpgsuqpeUBs4xofiWOu3TsnM+PIh6iTTHFP1HqSqmIRc3rxiPRccTl8mKf5lWJnXaUKfX17dRJrHpRR7vXDbxNGsKKIhwwmykwhZ2Xh+h1pvjC94sQkglcrLQGWou/DKHxU3rHuuiocwd0lMbTiXYrz/hNJOmKokSYSOPlho1ELsJFMl6Yr7qfirCjOpIHpHz66iS0E7tqOi6vc7/fLqjCt6UQQwpZPieeCfEycbkJ7WCzUuoiAAAA') format('woff2'),
+  url('iconfont.woff?t=1614322721637') format('woff'),
+  url('iconfont.ttf?t=1614322721637') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1614322721637#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e503";
+}
+
+.icon-helmet-battle:before {
+  content: "\eb5f";
+}
+
