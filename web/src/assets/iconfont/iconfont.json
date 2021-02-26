@@ -6,11 +6,32 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "9233136",
+      "icon_id": "6450855",
       "name": "menu",
       "font_class": "menu",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "8725269",
+      "name": "news",
+      "font_class": "news",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "9233136",
+      "name": "menu",
+      "font_class": "menu1",
       "unicode": "e503",
       "unicode_decimal": 58627
+    },
+    {
+      "icon_id": "13161007",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e609",
+      "unicode_decimal": 58889
     },
     {
       "icon_id": "13467170",
