@@ -12,7 +12,6 @@
       </swiper-slide>
       <div class="swiper-pagination pagination-home text-right px-3 pb-2" slot="pagination"></div>
     </swiper>
-
     <!-- end of swiper -->
 
     <div class="nav-icons text-center bg-white mt-3 pt-3 text-grey-1">
@@ -26,6 +25,11 @@
         <i class="sprite sprite-arrow mr-1"></i>
         <span>收起</span>
       </div>
+    </div>
+    <!-- end of nav-icons -->
+
+    <div class="news">
+      <i class="iconfont icon-helmet-battle fs-xl"></i>
     </div>
   </div>
 </template>
