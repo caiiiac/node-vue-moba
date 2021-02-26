@@ -28,9 +28,40 @@
     </div>
     <!-- end of nav-icons -->
 
-    <div class="news">
-      <i class="iconfont icon-helmet-battle fs-xl"></i>
-    </div>
+    <m-card title="新闻资讯" icon="news">
+      <div class="nav jc-between">
+        <div class="nav-item active">
+          <div class="nav-link">热门</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link">新闻</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link">公告</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link">活动</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link">赛事</div>
+        </div>
+      </div>
+      <div class="pt-3">
+        <swiper>
+          <swiper-slide v-for="m in 5" :key="m">
+            <div class="py-2" v-for="n in 5" :key="n">
+              <span>新闻</span>
+              <span>|</span>
+              <span>新版本即将上线</span>
+              <span>08/08</span>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </m-card>
+    <m-card title="英雄列表" icon="helmet-battle"></m-card>
+    <m-card title="精彩视频" icon="video"></m-card>
+    <m-card title="图文攻略" icon="menu1"></m-card>
   </div>
 </template>
 

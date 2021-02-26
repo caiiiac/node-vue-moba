@@ -11,6 +11,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
+import Card from './components/Card.vue'
+Vue.component('m-card', Card)
 
 new Vue({
   router,
