@@ -28,40 +28,19 @@
     </div>
     <!-- end of nav-icons -->
 
-    <m-card title="新闻资讯" icon="news">
-      <div class="nav jc-between">
-        <div class="nav-item active">
-          <div class="nav-link">热门</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">新闻</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">公告</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">活动</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">赛事</div>
-        </div>
-      </div>
-      <div class="pt-3">
-        <swiper>
-          <swiper-slide v-for="m in 5" :key="m">
-            <div class="py-2" v-for="n in 5" :key="n">
-              <span>新闻</span>
-              <span>|</span>
-              <span>新版本即将上线</span>
-              <span>08/08</span>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-    </m-card>
-    <m-card title="英雄列表" icon="helmet-battle"></m-card>
-    <m-card title="精彩视频" icon="video"></m-card>
-    <m-card title="图文攻略" icon="menu1"></m-card>
+    <m-list-card title="新闻资讯" icon="menu1" :categories="newsCats">
+      <template #items="{category}">
+        <div class="py-2" v-for="(news, i) in category.newsList" :key="i">
+            <span>{{news.categoryName}}</span>
+            <span>|</span>
+            <span>{{news.title}}</span>
+            <span>{{news.date}}</span>
+          </div>
+      </template>
+    </m-list-card>
+    <m-list-card title="英雄列表" icon="helmet-battle"></m-list-card>
+    <m-list-card title="精彩视频" icon="video"></m-list-card>
+    <m-list-card title="图文攻略" icon="menu1"></m-list-card>
   </div>
 </template>
 
@@ -89,7 +68,15 @@ export default {
         {title: '王者营地', icon: 'sprite sprite-camp'},
         {title: '公众号', icon: 'sprite sprite-wx'},
         {title: '版本介绍', icon: 'sprite sprite-version'},
-        ]
+      ],
+      newsCats: new Array("热门", "新闻", "公告", "活动", "赛事").map((v)=>({
+        name: v,
+        newsList: new Array(5).fill(1).map(()=> ({
+          categoryName: '公告',
+          title: '全服不停机更新公告',
+          date: '08/08'
+        }))
+      }))
     }
   }
 }
