@@ -35,7 +35,7 @@ module.exports = app => {
         } else if (req.Model.modelName === 'Hero') {
             queryOptions.populate = { path: 'categories' }
         }
-        const items = await req.Model.find().setOptions(queryOptions).limit(10)
+        const items = await req.Model.find().setOptions(queryOptions).limit(100)
         res.send(items)
     })
 
@@ -54,7 +54,7 @@ module.exports = app => {
 
     const multer = require('multer')
     const upload = multer({ dest: __dirname + '/../../uploads' })
-    app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async(req, res) => {
+    app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
         const file = req.file
         file.url = `http://localhost:3002/uploads/${file.filename}`
         res.send(file)
@@ -86,12 +86,12 @@ module.exports = app => {
         // }
 
         // 返回 token
-        const token = jwt.sign({ id: user._id}, app.get('secret'))
+        const token = jwt.sign({ id: user._id }, app.get('secret'))
 
-        res.send({ 
+        res.send({
             'username': user.username,
             'token': token
-         })
+        })
     })
 
     // 错误处理函数
