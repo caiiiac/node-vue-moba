@@ -57,26 +57,40 @@ module.exports = app => {
                 $addFields: {
                     newsList: {
                         $slice: ['$newsList', 5]
-                    }
+                    },
+                },
+                $addFields: {
+                    newsList: {
+                        categoryName: '$name'
+                    },
                 }
             }
         ])
 
+        // 首位插入热门数据
         const subCats = cats.map(v => v._id)
+        const hotData = await Article.find().where({
+            categories: { $in: subCats }
+        }).populate('categories').limit(5).lean()
+        
         cats.unshift({
             name: '热门',
-            newsList: await Article.find().where({
-                categories: { $in: subCats }
-            }).populate('categories').limit(5).lean()
+            newsList: hotData.map(v => {
+                // 添加分类名称字段
+                v.categoryName = v.categories[0].name
+                return v
+            })
         })
 
-        cats.map(cat => {
-            cat.newsList.map(news => {
-                news.categoryName = (cat.name === '热门') ? news.categories[0].name : cat.name
-                return news
-            })
-            return cat
-        })
+        // // 遍历赋值分类名称
+        // cats.map(cat => {
+        //     cat.newsList.map(news => {
+        //         // 热门分类名称取自categories的首个元素
+        //         news.categoryName = (cat.name === '热门') ? news.categories[0].name : cat.name
+        //         return news
+        //     })
+        //     return cat
+        // })
         res.send(cats)
     })
 
