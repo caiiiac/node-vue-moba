@@ -58,7 +58,9 @@ module.exports = app => {
                     newsList: {
                         $slice: ['$newsList', 5]
                     },
-                },
+                }
+            },
+            {
                 $addFields: {
                     newsList: {
                         categoryName: '$name'
