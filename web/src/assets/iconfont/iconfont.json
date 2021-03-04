@@ -39,6 +39,13 @@
       "font_class": "helmet-battle",
       "unicode": "eb5f",
       "unicode_decimal": 60255
+    },
+    {
+      "icon_id": "16106746",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e608",
+      "unicode_decimal": 58888
     }
   ]
 }
