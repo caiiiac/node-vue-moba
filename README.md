@@ -79,4 +79,27 @@
 
 ## 五、进阶
 1. 使用免费SSL证书启用HTTPS安全连接
-1. 使用阿里云OSS云存储存放上传文件
+2. 使用阿里云OSS云存储存放上传文件
+
+## 六、小技巧
+* 截取[王者荣耀官网](https://pvp.qq.com/m/)中的新闻标题:
+
+```
+$$('.news_list .title').map(el => el.innerHTML)
+```
+
+* 截取英雄列表:
+
+```
+JSON.stringify($$('.hero-nav > li').map((li, i) => { 
+    return {
+        name: li.innerText,
+        heroes: $$('li', $$('.hero-list')[i]).map(el => {
+            return {
+                name: $$('h3',el)[0].innerHTML, 
+                avatar:$$('img',el)[0].src
+            }
+        })
+    }
+}))
+```
