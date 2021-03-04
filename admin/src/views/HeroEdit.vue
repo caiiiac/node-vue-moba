@@ -140,11 +140,11 @@ export default {
       async save() {
         let res
         if (this.id) {
-          res = await this.$http.put(`rest/heros/${this.id}`, this.model)
+          res = await this.$http.put(`rest/heroes/${this.id}`, this.model)
         } else {
-          res = await this.$http.post('rest/heros', this.model)
+          res = await this.$http.post('rest/heroes', this.model)
         }
-          this.$router.push('/heros/list')
+          this.$router.push('/heroes/list')
           this.$message({
               type: 'success',
               message: '保存成功'
@@ -152,7 +152,7 @@ export default {
           console.log(res)
       },
       async fetch() {
-        const res = await this.$http.get(`rest/heros/${this.id}`)
+        const res = await this.$http.get(`rest/heroes/${this.id}`)
         this.model = Object.assign({}, this.model, res.data)
       },
       async fetchCategories() {
