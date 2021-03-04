@@ -31,14 +31,25 @@
     <m-list-card title="新闻资讯" icon="menu1" :categories="newsCats">
       <template #items="{category}">
         <div class="d-flex fs-lg py-2" v-for="(news, i) in category.newsList" :key="i">
-            <span class="text-info">{{news.categoryName}}</span>
-            <span class="px-2">|</span>
-            <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{news.title}}</span>
-            <span class="text-grey-1 fs-sm">{{news.createdAt | date}}</span>
-          </div>
+          <span class="text-info">{{news.categoryName}}</span>
+          <span class="px-2">|</span>
+          <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{news.title}}</span>
+          <span class="text-grey-1 fs-sm">{{news.createdAt | date}}</span>
+        </div>
       </template>
     </m-list-card>
-    <m-list-card title="英雄列表" icon="helmet-battle"></m-list-card>
+
+    <m-list-card title="英雄列表" icon="helmet-battle" :categories="heroCats">
+      <template #items="{category}">
+        <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
+          <div class="p-2 item-hero" v-for="(hero, i) in category.heroList" :key="i">
+            <img class="w-100" :src="hero.avatar">
+            <div class="text-center">{{hero.name}}</div>
+          </div>
+        </div>
+      </template>
+    </m-list-card>
+
     <m-list-card title="精彩视频" icon="video"></m-list-card>
     <m-list-card title="图文攻略" icon="menu1"></m-list-card>
   </div>
@@ -76,17 +87,23 @@ export default {
         {title: '公众号', icon: 'sprite sprite-wx'},
         {title: '版本介绍', icon: 'sprite sprite-version'},
       ],
-      newsCats: []
+      newsCats: [],
+      heroCats: [],
     }
   },
   methods: {
     async fetchNewsCats() {
       const res = await this.$http.get('news/list')
       this.newsCats = res.data
+    },
+    async fetchHeroCats() {
+      const res = await this.$http.get('hero/list')
+      this.heroCats = res.data
     }
   },
   created () {
       this.fetchNewsCats()
+      this.fetchHeroCats()
   }
 }
 </script>
@@ -118,5 +135,9 @@ export default {
       border-right: none;
     }
   }
+}
+
+.item-hero {
+  width: 20%;
 }
 </style>
