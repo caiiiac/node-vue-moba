@@ -30,22 +30,34 @@
 
     <m-list-card title="新闻资讯" icon="menu1" :categories="newsCats">
       <template #items="{category}">
-        <div class="d-flex fs-lg py-2" v-for="(news, i) in category.newsList" :key="i">
+        <router-link
+          tag="div"
+          :to="`/articles/${news._id}`"
+          class="d-flex fs-lg py-2"
+          v-for="(news, i) in category.newsList"
+          :key="i"
+        >
           <span class="text-info">{{news.categoryName}}</span>
           <span class="px-2">|</span>
           <span class="flex-1 text-dark-1 text-ellipsis pr-2">{{news.title}}</span>
           <span class="text-grey-1 fs-sm">{{news.createdAt | date}}</span>
-        </div>
+        </router-link>
       </template>
     </m-list-card>
 
     <m-list-card title="英雄列表" icon="helmet-battle" :categories="heroCats">
       <template #items="{category}">
         <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
-          <div class="p-2 item-hero" v-for="(hero, i) in category.heroList" :key="i">
-            <img class="w-100" :src="hero.avatar">
+          <router-link
+            tag="div"
+            :to="`/heroes/${hero._id}`"
+            class="p-2 item-hero"
+            v-for="(hero, i) in category.heroList"
+            :key="i"
+          >
+            <img class="w-100" :src="hero.avatar" />
             <div class="text-center">{{hero.name}}</div>
-          </div>
+          </router-link>
         </div>
       </template>
     </m-list-card>

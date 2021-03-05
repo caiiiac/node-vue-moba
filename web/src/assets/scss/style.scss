@@ -21,6 +21,10 @@ a {
     color: #999;
 }
 
+p {
+    line-height: 1.5em;;
+}
+
 // colors
 // $colors: (
 //     "white": #fff,
@@ -186,6 +190,13 @@ a {
                 #{$type}-#{$direction}: $size * $spacing-base-size;
             }
         }
+    }
+}
+
+// borders
+@each $dir in (top, right, bottom, left) {
+    .border-#{$dir} {
+        border-#{$dir}: 1px solid $border-color;
     }
 }
 
